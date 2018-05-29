@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    jndi-name: jdbc/test
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    properties:
+     hibernate:
+             current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+             dialect: org.hibernate.dialect.MySQL5Dialect
+
+
+logging:
+  file: f:\\temp\\app.log
+  pattern: "%d{HH:mm:ss} %-5p [%c] - %m%n"
+
+  level:
+    ROOT: warn
+    org.springframework: debug
+    org.springframework.security: debug
+    org.hibernate: debug
+    org.hibernate.type.descriptor.sql: trace
