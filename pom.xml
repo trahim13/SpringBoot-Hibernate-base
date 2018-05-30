@@ -9,7 +9,7 @@
     <packaging>war</packaging>
 
     <name>hibernate</name>
-    <description></description>
+
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -53,6 +53,14 @@
             <artifactId>guava</artifactId>
             <version>25.1-jre</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.22</version>
+            <scope>provided</scope>
+        </dependency>
+
 
         <dependency>
             <groupId>javax</groupId>
