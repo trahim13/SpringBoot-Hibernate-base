@@ -1,3 +1,9 @@
+management:
+    security:
+        enabled: false
+
+
+
 spring:
   datasource:
     jndi-name: jdbc/test
@@ -11,11 +17,12 @@ spring:
 
 logging:
   file: f:\\temp\\app.log
-  pattern: "%d{HH:mm:ss} %-5p [%c] - %m%n"
+  pattern:
+        file: "%d{HH:mm:ss} %-5p [%c] - %m%n"
 
   level:
     ROOT: warn
-    org.springframework: debug
-    org.springframework.security: debug
-    org.hibernate: debug
+    org.springframework: warn
+    org.springframework.security: warn
+    org.hibernate: warn
     org.hibernate.type.descriptor.sql: trace

@@ -20,6 +20,6 @@ public interface BookRepositore extends JpaRepository<Book, Long> {
     @Query("UPDATE Book b set b.content=:content where b.id=:id")
     void updateContent(@Param("content") byte[] content, @Param("id") Long id);
 
-    @Query("select new ru.javabegin.training.springlibrary.domain.Book(b.id, b.name, b.pageCount, b.isbn, b.genre, b.author, b.publisher, b.publishYear, b.image, b.descr) from Book b")
+    @Query("select new org.trahim.spring.domain.Book (b.id, b.name, b.pageCount, b.isbn, b.genre, b.author, b.publisher, b.publishYear, b.image, b.descr) from Book b")
     Page<Book> findAllWithoutContent(Pageable pageable);
 }
