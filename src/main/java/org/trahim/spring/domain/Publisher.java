@@ -1,4 +1,4 @@
-package domain;
+package org.trahim.spring.domain;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -11,13 +11,13 @@ import javax.persistence.*;
 import java.util.List;
 
 @EqualsAndHashCode(of = "id")
-@Table(name="genre", catalog = "test")
+@Table(name="publisher", catalog = "library")
+@Getter @Setter
 @DynamicUpdate
 @DynamicInsert
 @SelectBeforeUpdate
 @Entity
-@Getter @Setter
-public class Genre {
+public class Publisher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +26,7 @@ public class Genre {
     private String name;
 
     @Basic(fetch = FetchType.LAZY)
-    @OneToMany(mappedBy = "genre")
+    @OneToMany(mappedBy = "publisher")
     private List<Book> books;
 
     @Override

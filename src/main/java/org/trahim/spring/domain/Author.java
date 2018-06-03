@@ -1,4 +1,4 @@
-package domain;
+package org.trahim.spring.domain;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -8,29 +8,32 @@ import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.SelectBeforeUpdate;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
+@Entity
+@Table (name="author", catalog = "library")
 @EqualsAndHashCode(of = "id")
-@Table(name="publisher", catalog = "test")
 @Getter @Setter
 @DynamicUpdate
 @DynamicInsert
 @SelectBeforeUpdate
-@Entity
-public class Publisher {
+public class Author {
 
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Long id;
 
-    private String name;
+    private String fio;
+
+    private Date birthday;
 
     @Basic(fetch = FetchType.LAZY)
-    @OneToMany(mappedBy = "publisher")
+    @OneToMany(mappedBy = "author")
     private List<Book> books;
 
     @Override
     public String toString() {
-        return name;
+        return fio;
     }
 }

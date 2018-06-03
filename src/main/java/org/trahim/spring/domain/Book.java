@@ -1,4 +1,4 @@
-package domain;
+package org.trahim.spring.domain;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -10,7 +10,7 @@ import org.hibernate.annotations.SelectBeforeUpdate;
 import javax.persistence.*;
 
 @Entity
-@Table (name="book", catalog = "test")
+@Table (name="book", catalog = "library")
 @DynamicUpdate
 @DynamicInsert
 @SelectBeforeUpdate
@@ -20,6 +20,8 @@ public class Book {
 
     public Book() {
     }
+
+
 
     public Book(Long id, String name, Integer pageCount, String isbn, Genre genre, Author author, Publisher publisher, Integer publishYear, byte[] image, String descr) {
         this.id = id;
